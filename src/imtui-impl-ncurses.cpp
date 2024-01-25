@@ -320,7 +320,7 @@ void ImTui_ImplNcurses_DrawScreen(bool active) {
             const uint16_t p = b*256 + f;
 
             if (colPairs[p].first == false) {
-                init_pair(nColPairs, f, b);
+                init_pair(nColPairs, f, !b ? -1 : b);
                 colPairs[p].first = true;
                 colPairs[p].second = nColPairs;
                 ++nColPairs;
